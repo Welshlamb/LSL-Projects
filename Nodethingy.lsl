@@ -5,11 +5,11 @@ float maxSpread;
 float recoil;
 float spread;
 float vel;
-float spreadHandler;
-float x;
-float y;
-float z;
-rotation rot;
+//float spreadHandler;
+//float x;
+//float y;
+//float z;
+//rotation rot;
 key idSelf;
 string fireSound;
 list shotInfo;
@@ -64,11 +64,11 @@ default {
     }
     timer()
     {
-        spreadHandler = spread * DEG_TO_RAD;
+        /*spreadHandler = spread * DEG_TO_RAD;
         x = (llFrand(0.5)-0.25)*spreadHandler;
         y = (llFrand(0.5)-0.25)*spreadHandler;
         z = (llFrand(0.5)-0.25)*spreadHandler;
-        rot = llEuler2Rot(<x,y,z>);
+        rot = llEuler2Rot(<x,y,z>);*/
         llTriggerSound(fireSound,1);
         //llRezAtRoot(bullet,(llGetCameraPos()+(llGetVel()*.2))+<5.5,0,0>*llGetCameraRot(),<settings.x,0,0>*llGetCameraRot()*rot, llEuler2Rot(<0, -90, 0>*DEG_TO_RAD)*llGetCameraRot()*rot, 1);
         shotInfo = llCastRay(llGetCameraPos()+<0,0,0>*llGetCameraRot(),llGetCameraPos()+<200,0,0>*llGetCameraRot(),[RC_REJECT_TYPES,RC_REJECT_PHYSICAL]);
